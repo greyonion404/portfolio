@@ -4,15 +4,27 @@ import data from '../../data'
 
 
 let fontFamily = "'Yanone Kaffeesatz', sans-serif";
+let fonts = ['3vmin', '4.5vmin', '6vmin',  '7.5vmin'];
+let fontsSmaller = ['4.5vmin', '6vmin', '7.5vmin',  '9vmin'];
 
-let getFontSize = (fontIndex) => {
-    let fonts = ['xx-small', 'small', 'large', 'xx-large'];
-    return fonts[fontIndex];
+let getFontSize = (fontIndex, isSmallerDevice) => {
+    console.log("fontIndex");
+    console.log(fontIndex);
+    console.log(isSmallerDevice);
+    if(!fontIndex) fontIndex  = 0;
+    else fontIndex = fontIndex - 1;
+    return  (isSmallerDevice ? fontsSmaller[fontIndex] : fonts[fontIndex]);
 };
+
+// props : 
+// size : null or (1 - 5) : Number
+// active : null or true/false
+// underline : null or true/false
+// underlineOnHover : null or true/false
+
 
 let Text = styled.p`
     cursor: pointer;
-    padding: 10px;
     font-size: ${({size})=>(getFontSize(size))};
     font-family: ${fontFamily};
     text-decoration: ${({ underline }) => (underline ? "underline" : "none")};
@@ -20,7 +32,10 @@ let Text = styled.p`
     border-radius: ${data.styles.borderRadius};;
 
     &:hover{
-        text-decoration: ${({ underlineOnHover }) => (underlineOnHover ? "underline" : "none")};
+        text-decoration: ${({ underlineOnHover, underline }) => ((underlineOnHover || underline) ? "underline" : "none")};
+    }
+    @media ${data.styles.devices.tablet} {
+        font-size: ${({size})=>(getFontSize(size, true))};
     }
 `
 export { Text }
