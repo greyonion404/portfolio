@@ -1,6 +1,5 @@
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react";
-import data from "../../data";
 import { NavbarContainer, NavbarMain, NavLink, NavUnder } from "./Navbar.styles";
 
 export default function Navbar() {
