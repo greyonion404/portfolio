@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import data from '../../data'
 
 
-const navbarHeight = "10vh";
+const navbarHeight = "15vh";
 const navbarWidth = "100vw";
 
 
@@ -24,7 +24,7 @@ let NavbarContainer = styled.div`
 let NavbarMain = styled.div`
     ${data.styles.snippet.centerDiv}
     height: 100%;
-    width: 80%;
+    width: 65%;
     background-color: ${data.styles.color.primary};
     padding: 15px;
 
@@ -40,6 +40,7 @@ let NavLink = styled.p`
     font-size: xx-large;
     cursor: pointer;
     font-family: ${fontFamily};
+    height: min-content;
     // {active == true : if the page is in the current link}
     text-decoration: ${({ active }) => (active ? "underline" : "none")};
     color:  ${({ active }) => (active ? `${data.styles.color.text.lightest}` : `${data.styles.color.text.lighter}`)};

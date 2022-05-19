@@ -17,7 +17,6 @@ export default function Navbar() {
 
     useEffect(() => {
         if (!Router.pathname) return;
-        console.log(Router.pathname);
         if (Router.pathname.includes('blogs')) setCurrentPage(PAGES.BLOGS);
         else if (Router.pathname.includes('projects')) setCurrentPage(PAGES.PROJECTS);
         else setCurrentPage(PAGES.HOME);

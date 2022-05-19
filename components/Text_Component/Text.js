@@ -4,13 +4,10 @@ import data from '../../data'
 
 
 let fontFamily = "'Yanone Kaffeesatz', sans-serif";
-let fonts = ['3vmin', '4.5vmin', '6vmin',  '7.5vmin'];
-let fontsSmaller = ['4.5vmin', '6vmin', '7.5vmin',  '9vmin'];
+let fonts = ['2.5vmin', '4.5vmin', '6vmin',  '7.5vmin'];
+let fontsSmaller = ['5vmin', '6vmin', '7.5vmin',  '9vmin'];
 
 let getFontSize = (fontIndex, isSmallerDevice) => {
-    console.log("fontIndex");
-    console.log(fontIndex);
-    console.log(isSmallerDevice);
     if(!fontIndex) fontIndex  = 0;
     else fontIndex = fontIndex - 1;
     return  (isSmallerDevice ? fontsSmaller[fontIndex] : fonts[fontIndex]);
@@ -29,7 +26,8 @@ let Text = styled.p`
     font-family: ${fontFamily};
     text-decoration: ${({ underline }) => (underline ? "underline" : "none")};
     color:  ${({ active }) => (active ? `${data.styles.color.text.lightest}` : `${data.styles.color.text.lighter}`)};
-    border-radius: ${data.styles.borderRadius};;
+    border-radius: ${data.styles.borderRadius};
+    line-height: 1.3;
 
     &:hover{
         text-decoration: ${({ underlineOnHover, underline }) => ((underlineOnHover || underline) ? "underline" : "none")};

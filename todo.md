@@ -1,3 +1,9 @@
+
+[X] create ProfileInformation component for homepage
+    
+
+End Time : may 17 11:19 PM
+
 start Time : May 17 10:19 PM
 
 [X] create a Text component to be used throughout the project

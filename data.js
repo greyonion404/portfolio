@@ -9,9 +9,15 @@ const screenSize = {
 };
 
 const data = {
-
+    info: {
+        home: {
+            profilName: "Grey Onion",
+            profileImage: "https://picsum.photos/200",
+            designation: "Programmer and Web-developer",
+            aboutInfo: "Passionate React Developer with 3+ years of experience blending the design with programming skills to deliver an immersive and engaging user experience through efficient website development, proactive feature optimization, and relentless debugging.",
+        },
+    },
     styles: {
-
         devices: {
             mobileS: `(max-width: ${screenSize.mobileSmall})`,
             mobileM: `(max-width: ${screenSize.mobileMedium})`,
@@ -21,11 +27,7 @@ const data = {
             laptopL: `(max-width: ${screenSize.laptopLarge})`,
             desktop: `(max-width: ${screenSize.desktop})`,
         },
-
-        borderRadius: "10px",
-
-        color:
-        {
+        color: {
             dark: "#000000",
             light: "#FFFFFF",
             primary: "#23272A",
@@ -34,19 +36,17 @@ const data = {
             secondaryMedium: "#404EED",
             text: {
                 light: "#99AAB5",
-                lighter: "#DBDBDB",
+                lighter: "#C0C0C0",
                 lightest: "#FFFFFF",
                 inverted: "#000000"
             }
         },
-
-        snippet: 
-        {
-            centerDiv: `display: flex; align-items: "center"; justify-content: center;`
+        borderRadius: "10px",
+        snippet: {
+            centerDiv: `display: flex; align-items: "center"; justify-content: center;`,
         }
     },
-
-
-
 };
+
+
 export { data as default }
