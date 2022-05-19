@@ -10,12 +10,12 @@ export default function ProfileInformation() {
             <ProfileContainer>
                 <ProfileMain>
                     <ProfileTextContainer>
-                        <Text size={4} active> {data.info.profileInformation.profilName} </Text>
-                        <Text size={2} style={{ marginBottom: "20px" }}> {data.info.profileInformation.designation} </Text>
-                        <Text size={1}>{data.info.profileInformation.aboutInfo}</Text>
+                        <Text size={4} active> {data.info.ProfileInformation.profilName} </Text>
+                        <Text size={2} style={{ marginBottom: "20px" }}> {data.info.ProfileInformation.designation} </Text>
+                        <Text size={1}>{data.info.ProfileInformation.aboutInfo}</Text>
                     </ProfileTextContainer>
                     <ProfileImageContainer>
-                        <ProfileImage src={data.info.profileInformation.profileImage} />
+                        <ProfileImage src={data.info.ProfileInformation.profileImage} />
                     </ProfileImageContainer>
                 </ProfileMain>
             </ProfileContainer>

@@ -1,6 +1,16 @@
 # Todo List for development
 ## authored by : grey onion
 
+---
+`start Time : May 19 2:14 PM`
+
+`End Time : not finished yet`
+
+- > [X] create WorkAndEducation component for homepage
+
+---
+
+
 
 ---
 `start Time : May 18 2:01 AM`
