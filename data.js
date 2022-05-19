@@ -10,12 +10,21 @@ const screenSize = {
 
 const data = {
     info: {
-        profileInformation: {
+        ProfileInformation: {
             profilName: "Grey Onion",
             profileImage: "https://picsum.photos/200",
             designation: "Programmer and Web-developer",
             aboutInfo: "Passionate React Developer with 3+ years of experience blending the design with programming skills to deliver an immersive and engaging user experience through efficient website development, proactive feature optimization, and relentless debugging.",
         },
+        WorkAndEducation: {
+            prompt: "Work and Education",
+            studiedAt: [
+
+            ],
+            workedAt: [
+                
+            ],
+        }
     },
     styles: {
         devices: {
