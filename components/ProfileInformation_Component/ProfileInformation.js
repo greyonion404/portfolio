@@ -1,5 +1,3 @@
-import { useRouter } from "next/router"
-import { useEffect, useState } from "react";
 import data from "../../data";
 import { Text } from "../Text_Component/Text";
 import { ProfileContainer, ProfileMain, ProfileTextContainer, ProfileImageContainer, ProfileImage } from "./ProfileInformation.styles";
@@ -11,16 +9,14 @@ export default function ProfileInformation() {
         <>
             <ProfileContainer>
                 <ProfileMain>
-
                     <ProfileTextContainer>
-                        <Text size={4} active> {data.info.home.profilName} </Text>
-                        <Text size={2} style={{ marginBottom: "20px" }}> {data.info.home.designation} </Text>
-                        <Text size={1}>{data.info.home.aboutInfo}</Text>
+                        <Text size={4} active> {data.info.profileInformation.profilName} </Text>
+                        <Text size={2} style={{ marginBottom: "20px" }}> {data.info.profileInformation.designation} </Text>
+                        <Text size={1}>{data.info.profileInformation.aboutInfo}</Text>
                     </ProfileTextContainer>
                     <ProfileImageContainer>
-                        <ProfileImage src={data.info.home.profileImage} />
+                        <ProfileImage src={data.info.profileInformation.profileImage} />
                     </ProfileImageContainer>
-
                 </ProfileMain>
             </ProfileContainer>
         </>

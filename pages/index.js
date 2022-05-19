@@ -3,9 +3,9 @@ import ProfileInformation from '../components/ProfileInformation_Component/Profi
 import { Text } from '../components/Text_Component/Text'
 export default function Home() {
   return (
-    <div>
+    <>
       <Navbar/>
       <ProfileInformation/>
-    </div>
+    </>
   )
 }

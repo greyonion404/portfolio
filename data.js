@@ -10,7 +10,7 @@ const screenSize = {
 
 const data = {
     info: {
-        home: {
+        profileInformation: {
             profilName: "Grey Onion",
             profileImage: "https://picsum.photos/200",
             designation: "Programmer and Web-developer",

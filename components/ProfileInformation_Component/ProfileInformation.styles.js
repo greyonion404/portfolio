@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import data from '../../data'
 
-
 let height = "40vh";
 let width = " 100vw";
 
