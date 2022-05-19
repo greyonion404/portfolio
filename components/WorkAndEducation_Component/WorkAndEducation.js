@@ -1,8 +1,8 @@
 import data from "../../data";
 import { Text } from "../Text_Component/Text";
 import { WorkAndEducationContainer } from "./WorkAndEducation.styles";
-import WorkHistory from "./WorkHistory";
-import EducationHistory from "./EducationHistory";
+import WorkHistory from "./SubComponents/WorkHistory";
+import EducationHistory from "./SubComponents/EducationHistory";
 
 
 export default function WorkAndEducation() {
