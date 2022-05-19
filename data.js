@@ -19,10 +19,10 @@ const data = {
         WorkAndEducation: {
             prompt: "Work and Education",
             studiedAt: [
-
+                1, 2
             ],
             workedAt: [
-                
+
             ],
         }
     },
