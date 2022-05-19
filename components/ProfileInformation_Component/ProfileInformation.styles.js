@@ -6,7 +6,7 @@ let width = " 100vw";
 
 let ProfileContainer = styled.div`
     ${data.styles.snippet.centerDiv}
-    min-height: ${height};
+    height: max-content;
     width:  ${width};
     background-color: ${data.styles.color.primaryMedium}; 
     padding-top: 10px;
@@ -14,12 +14,10 @@ let ProfileContainer = styled.div`
 let ProfileMain = styled.div`
     padding: 15px;
     padding-left: 30px;
-    min-height: ${height};
     height: max-content;
     width: 65%;
     background-color: ${data.styles.color.primary}; 
     display: flex;
-
     @media ${data.styles.devices.tablet} {
         flex-direction: column-reverse;
         padding-left: 15px;
@@ -32,10 +30,12 @@ let ProfileTextContainer = styled.div`
     width: 60%;
     min-width: 60%;
     max-width: 60%;
+    margin-bottom: 30px;
     @media ${data.styles.devices.tablet} {
         width: 100%;
         min-width: 100%;
         max-width: 100%;
+        margin-bottom: 20px;
     }
 `
 let ProfileImageContainer = styled.div`
@@ -62,4 +62,4 @@ let ProfileImage = styled.img`
     }
 `
 
-export { ProfileContainer, ProfileMain, ProfileTextContainer, ProfileImageContainer, ProfileImage}
+export { ProfileContainer, ProfileMain, ProfileTextContainer, ProfileImageContainer, ProfileImage }

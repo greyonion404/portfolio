@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import data from '../../data'
 
+
 const navbarHeight = "15vh";
 const navbarWidth = "100vw";
 
