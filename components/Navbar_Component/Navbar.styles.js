@@ -27,6 +27,8 @@ let NavbarMain = styled.div`
     width: 65%;
     background-color: ${data.styles.color.primary};
     padding: 15px;
+    border-bottom: 1px solid ${data.styles.color.text.lighter}20;
+
 
     @media ${data.styles.devices.tablet} {
         width: 100%;

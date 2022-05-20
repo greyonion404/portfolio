@@ -10,6 +10,7 @@ let ProfileContainer = styled.div`
     width:  ${width};
     background-color: ${data.styles.color.primaryMedium}; 
     padding-top: 10px;
+
 `
 let ProfileMain = styled.div`
     padding: 15px;
@@ -57,6 +58,8 @@ let ProfileImage = styled.img`
     height: 15vh;
     aspect-ratio: 1;
     border-radius: 50%;
+    color: white;
+    text-align: center;
     @media ${data.styles.devices.tablet} {
         margin: 0;
     }
