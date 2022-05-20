@@ -35,7 +35,7 @@ text: {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Yanone Kaffeesatz', sans-serif;
-
+  color: var(--primaryMedium);
   -ms-overflow-style: none;
   /* IE and Edge */
   scrollbar-width: none;
