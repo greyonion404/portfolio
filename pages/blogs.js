@@ -22,7 +22,6 @@ export default function Blogs({ blogs }) {
   }, [blogs]);
 
   const changePage = ({ selected }) => {
-    console.log(selected);
     SetCurrentPage(selected);
   }
   return (
