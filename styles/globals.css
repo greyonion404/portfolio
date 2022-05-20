@@ -1,14 +1,154 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
 
+
+/* 
+dark: "#000000",
+light: "#FFFFFF",
+primary: "#23272A",
+primaryMedium: "#2C2F33",
+secondary: "#5865F2",
+secondaryMedium: "#404EED",
+text: {
+    light: "#99AAB5",
+    lighter: "#C0C0C0",
+    lightest: "#FFFFFF",
+    inverted: "#000000"
+} 
+*/
+
+:root {
+  --dark: #000000;
+  --light: #FFFFFF;
+  --primary: #23272A;
+  --primaryMedium: #2C2F33;
+  --secondary: #5865F2;
+  --secondaryMedium: #404EED;
+  --textLight: #99AAB5;
+  --textLighter: #C0C0C0;
+  --textLightest: #FFFFFF;
+  --textInverted: #000000;
+}
+
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  overflow-x: hidden;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
-body
-{
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body {
   background-color: #2C2F33;
 }
+
+/* External Library styling : react pagination*/
+
+.PaginationContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 17.5%;
+  width: 65vw;
+  max-width: 65vw;
+  min-width: 65vw;
+  min-height: 10vh;
+  height: auto;
+  list-style-type: none;
+  border-top: 1px solid #C0C0C030;
+  overflow-x: scroll;
+}
+
+.PaginationContainer li {
+  cursor: pointer;
+}
+
+.PaginationContainer li a {
+  display: block;
+  color: #cfcfcf;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  border: 1px solid #cfcfcf;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: x-large;
+  margin-left: 10px;
+}
+
+.PaginationContainer li a:hover {
+  background-color: #404EED50;
+  color: var(--textLighter)
+}
+
+.PaginationContainer .ActivePaginationLink a {
+  background-color: #404EED50;
+  color: var(--textLightest);
+}
+
+/* 
+  const screenSize = {
+  mobileSmall: '320px',
+  mobileMedium: '375px',
+  mobileLarge: '425px',
+  tablet: '768px',
+  laptop: '1024px',
+  laptopLarge: '1440px',
+  desktop: '2560px',
+}; */
+
+
+@media (max-width: 768px) {
+
+  .PaginationContainer {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .PaginationContainer li a {
+    font-size: 1.5rem;
+    padding: 8px;
+    margin-left: 10px;
+  }
+
+}
+
+
+@media (max-width: 425px) {
+
+  .PaginationContainer li a {
+    font-size: medium;
+    padding: 3px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 321px) {
+
+  .PaginationContainer li a {
+    font-size: small;
+    padding: 2px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-left: 5px;
+  }
+
+}
+
+/*  */
