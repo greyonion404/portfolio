@@ -47,6 +47,11 @@ let BlogSnippet = styled.div`
         flex-direction: column-reverse;
         padding-left: 15px;
         width: 100%;
+        
+        &:nth-last-child(1)
+        {
+            margin-bottom: 10vh;
+        }
     }
 `
 
