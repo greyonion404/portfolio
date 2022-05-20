@@ -15,7 +15,7 @@ export default function ProfileInformation() {
                         <Text size={1}>{data.info.ProfileInformation.aboutInfo}</Text>
                     </ProfileTextContainer>
                     <ProfileImageContainer>
-                        <ProfileImage src={data.info.ProfileInformation.profileImage} />
+                        <ProfileImage src={data.info.ProfileInformation.profileImage} alt="profile picture"/>
                     </ProfileImageContainer>
                 </ProfileMain>
             </ProfileContainer>
