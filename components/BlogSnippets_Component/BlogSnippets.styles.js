@@ -47,6 +47,13 @@ let BlogSnippet = styled.div`
         flex-direction: column-reverse;
         padding-left: 15px;
         width: 100%;
+
+
+        &:hover{
+            background-color: ${`${data.styles.color.primaryMedium}${hoveredOpacity}`};
+            transition: unset;
+            transform: unset;
+        }
         
         &:nth-last-child(1)
         {
