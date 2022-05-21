@@ -28,9 +28,6 @@ let Text = styled.p`
     color:  ${({ active }) => (active ? `${data.styles.color.text.lightest}` : `${data.styles.color.text.lighter}`)};
     border-radius: ${data.styles.borderRadius};
     line-height: 1.3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     &:hover{
         text-decoration: ${({ underlineOnHover, underline }) => ((underlineOnHover || underline) ? "underline" : "none")};
