@@ -2,7 +2,8 @@ import { useState } from "react";
 import data from "../../../data";
 import visitUrlInNewTab from "../../../Utils/VisitUrlInNewTab";
 import { Text } from "../../Text_Component/Text";
-import { ContainerChild, PromptContainer} from "../WorkAndEducation.styles";
+import { ContainerChild, PromptContainer } from "../WorkAndEducation.styles";
+import { AiFillDownCircle, AiFillUpCircle } from 'react-icons/ai';
 
 
 
@@ -21,9 +22,11 @@ export default function EducationHistory() {
                 <Text size={1} >
                     Education :
                 </Text>
-                <Text underlineOnHover onClick={toggleEducationShown}>
+                <Text underlineOnHover active onClick={toggleEducationShown}>
                     {
-                        (showEducation ? "hide" : "view")
+                        showEducation ?
+                            (<AiFillUpCircle color={data.styles.color.text.lighter} />) :
+                            (<AiFillDownCircle color={data.styles.color.text.lighter} />)
                     }
                 </Text>
             </PromptContainer>

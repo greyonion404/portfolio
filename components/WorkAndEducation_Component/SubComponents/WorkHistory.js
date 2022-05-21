@@ -3,7 +3,7 @@ import data from "../../../data";
 import visitUrlInNewTab from "../../../Utils/VisitUrlInNewTab";
 import { Text } from "../../Text_Component/Text";
 import { ContainerChild, PromptContainer } from "../WorkAndEducation.styles";
-
+import { AiFillDownCircle, AiFillUpCircle } from 'react-icons/ai';
 
 // for later use
 // function scrollToTop() {
@@ -25,9 +25,11 @@ export default function WorkHistory() {
                 <Text size={1} >
                     Work :
                 </Text>
-                <Text underlineOnHover onClick={toggleWorkShown}>
+                <Text underlineOnHover active onClick={toggleWorkShown}>
                     {
-                        (showWork ? "hide" : "view")
+                        showWork ?
+                            (<AiFillUpCircle color={data.styles.color.text.lighter} />) :
+                            (<AiFillDownCircle color={data.styles.color.text.lighter} />)
                     }
                 </Text>
             </PromptContainer>
