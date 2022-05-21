@@ -14,6 +14,7 @@ let BlogSnippetsContainer = styled.div`
     grid-template-columns: 1fr 1fr;
     overflow-y: scroll;
     padding: 10px;
+    word-break: break-all;
     @media ${data.styles.devices.tablet} {
         grid-template-columns: 1fr;
         margin-top: .5vh;
@@ -21,6 +22,21 @@ let BlogSnippetsContainer = styled.div`
         height: 74vh;
     }
 `
+let BlogContainer = styled.div`
+    height: max-content;
+    width:  ${width};
+    margin: auto;
+    background-color: ${data.styles.color.primary}; 
+    display: grid;
+    padding: 15px;
+    @media ${data.styles.devices.tablet} {
+        grid-template-columns: 1fr;
+        margin-top: .5vh;
+        width: 100vw;
+        height: 74vh;
+    }
+`
+
 
 let opacity = 50;
 let hoveredOpacity = 90;
@@ -63,4 +79,4 @@ let BlogSnippet = styled.div`
 `
 
 
-export { BlogSnippetsContainer, BlogSnippet }
+export { BlogSnippetsContainer, BlogSnippet, BlogContainer }
