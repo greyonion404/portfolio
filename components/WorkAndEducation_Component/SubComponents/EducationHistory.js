@@ -1,9 +1,9 @@
 import { useState } from "react";
 import data from "../../../data";
-import visitUrlInNewTab from "../../../Utils/VisitUrlInNewTab";
 import { Text } from "../../Text_Component/Text";
 import { ContainerChild, PromptContainer } from "../WorkAndEducation.styles";
 import { AiFillDownCircle, AiFillUpCircle } from 'react-icons/ai';
+import { visitUrlInNewTab } from "../../../Utils/utility-functions";
 
 
 
