@@ -1,21 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
 
 
-/* 
-dark: "#000000",
-light: "#FFFFFF",
-primary: "#23272A",
-primaryMedium: "#2C2F33",
-secondary: "#5865F2",
-secondaryMedium: "#404EED",
-text: {
-    light: "#99AAB5",
-    lighter: "#C0C0C0",
-    lightest: "#FFFFFF",
-    inverted: "#000000"
-} 
-*/
-
 :root {
   --dark: #000000;
   --light: #FFFFFF;
@@ -53,8 +38,6 @@ body {
   background-color: #2C2F33;
 }
 
-/* External Library styling : react-pagination, sanity-container */
-
 
 .sanity-container {
   display: block;
@@ -63,15 +46,10 @@ body {
   padding: .5rem;
 }
 
-/* let fonts = ['2.5vmin', '4.5vmin', '6vmin',  '7.5vmin'];
-let fontsSmaller = ['5vmin', '6vmin', '7.5vmin',  '9vmin']; */
 
 .sanity-container p, .sanity-container h3, .sanity-container a {
   line-height: 1.3;
 }
-
-
-
 
 .sanity-container p {
   color: var(--textLight);
@@ -111,8 +89,6 @@ let fontsSmaller = ['5vmin', '6vmin', '7.5vmin',  '9vmin']; */
   font-size: 2.5vmin;
 }
 
-
-
 .sanity-container figure {
   margin: 0;
   display: flex;
@@ -127,9 +103,6 @@ let fontsSmaller = ['5vmin', '6vmin', '7.5vmin',  '9vmin']; */
   aspect-ratio: 100/45;
   margin: auto;
 }
-
-
-
 
 .PaginationContainer {
   position: fixed;
@@ -204,15 +177,9 @@ let fontsSmaller = ['5vmin', '6vmin', '7.5vmin',  '9vmin']; */
     margin-left: 10px;
   }
 
-  /* let fonts = ['2.5vmin', '4.5vmin', '6vmin',  '7.5vmin'];
-let fontsSmaller = ['5vmin', '6vmin', '7.5vmin',  '9vmin']; */
-
   .sanity-container p, .sanity-container h3, .sanity-container a {
     line-height: 1.3;
   }
-
-
-
 
   .sanity-container p {
     color: var(--textLight);
@@ -277,5 +244,3 @@ let fontsSmaller = ['5vmin', '6vmin', '7.5vmin',  '9vmin']; */
   }
 
 }
-
-/*  */
