@@ -6,7 +6,7 @@ import Navbar from '../../components/Navbar_Component/Navbar'
 import { BlogContainer } from '../../components/BlogSnippets_Component/BlogSnippets.styles';
 import { Text } from '../../components/Text_Component/Text';
 import { formattedDate, urlForImage } from '../../Utils/utility-functions';
-
+import styles from '../../styles/sanity.module.css'
 
 
 
@@ -32,7 +32,7 @@ export default function Blog({ blog }) {
                 </Text>
                 <img style={{ width: "90%", aspectRatio: "100/45", margin: "auto" }} src={urlForImage(mainImage)} />
                 {body &&
-                    <BlockContent className={"sanity-container"}
+                    <BlockContent className={styles.sanity_container}
                         blocks={body}
                         projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
                         dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
