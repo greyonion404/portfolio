@@ -35,13 +35,15 @@ text: {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Yanone Kaffeesatz', sans-serif;
-  color: var(--primaryMedium);
   -ms-overflow-style: none;
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
 }
 
+p {
+  color: var(--primaryMedium);
+}
 *::-webkit-scrollbar {
   display: none;
 }
@@ -50,7 +52,7 @@ body {
   background-color: #2C2F33;
 }
 
-/* External Library styling : react pagination*/
+/* External Library styling : react-pagination */
 
 .PaginationContainer {
   position: fixed;
