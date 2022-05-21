@@ -46,12 +46,12 @@ export default function BlogSnippets({ blogs }) {
                         </div>
                         <Text underlineOnHover onClick={() => { router.push(`/blogs/${article.slug.current}`) }}>
                             Read This Blog
-                            {<FaReadme style={{ marginLeft: "4px", fontSize: "90%" }} />}
+                            {<FaReadme style={{ marginLeft: "8px", fontSize: "90%" }} />}
                         </Text>
                         <Text>
                             {article.authorName && <FaPenFancy style={{ marginRight: "4px", fontSize: "60%" }} />}
                             {article.authorName && article.authorName}
-                            {<FaCalendar style={{ marginLeft: "4px", marginRight: "4px", fontSize: "60%" }} />}
+                            {<FaCalendar style={{ marginLeft: "20px", marginRight: "4px", fontSize: "60%" }} />}
                             {formattedDate(article.publishedAt)}
                         </Text>
                     </BlogSnippet>
