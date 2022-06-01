@@ -50,22 +50,22 @@ const data = {
             workedAt: [
                 {
                     id: 1,
-                    role: "junior engineer",
-                    workplaceName: "Amazon",
-                    startTime: "20 Jan 2021",
+                    role: "freelance software and web-developer",
+                    workplaceName: "fiverr, freelancer",
+                    startTime: "20 Jan 2022",
                     endTime: "present",
-                    websiteLink: "https://www.aboutamazon.com/workplace",
-                    description: "I was offered and accepted a full-time offer with Amazon - a Software Development company in Georgia.",
-                },
-                {
-                    id: 2,
-                    role: "software developer",
-                    workplaceName: "Google",
-                    startTime: "12 Jan 2020",
-                    endTime: "20 Jan 2021",
                     websiteLink: null,
-                    description: "I was offered and accepted a full-time offer with Google - a Software Development company in Georgia.",
+                    description: "I try to utilize my free time and implement the skills I have learned in different freelance projects.",
                 },
+                // {
+                //     id: 2,
+                //     role: "software developer",
+                //     workplaceName: "Google",
+                //     startTime: "12 Jan 2020",
+                //     endTime: "20 Jan 2021",
+                //     websiteLink: null,
+                //     description: "I was offered and accepted a full-time offer with Google - a Software Development company in Georgia.",
+                // },
 
             ],
         }
