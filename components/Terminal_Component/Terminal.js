@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from "react";
-import { Console, Input } from "./Terminal.styles";
+import { Console, Error, HeadingText, Highlighted, Input } from "./Terminal.styles";
 import { Text } from '../Text_Component/Text'
 import { visitUrlInNewTab } from "../../Utils/utility-functions";
-import { AiFillHome, AiFillUpCircle } from 'react-icons/ai';
-import data from "../../data";
+import { FaTerminal, FaDesktop } from 'react-icons/fa';
+
 
 export default function Terminal() {
 
@@ -12,6 +12,7 @@ export default function Terminal() {
     const [input, setInput] = useState("");
     const [user, setUser] = useState({ name: "user", password: "" });
     let inputRef = useRef(null);
+    let currentCommandIndex = 0;
 
 
     useEffect(() => {
@@ -19,105 +20,174 @@ export default function Terminal() {
     }, [])
 
 
-    function isValidGotoCommand(input) {
+    useEffect(() => {
+        currentCommandIndex = history.length;
+    }, [history])
+
+    function scrollToView(reference) {
+        reference.current.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function keydownAction(event) {
+
+        if (event.key == "Enter") {
+            event.preventDefault();
+            executeCommands();
+            setInput("");
+            scrollToView(inputRef);
+        }
+        if (event.key == "ArrowUp") {
+            if (history.length !== 0 && currentCommandIndex > 0) currentCommandIndex--;
+            if (history.length !== 0) setInput(history[currentCommandIndex].input);
+        }
+        if (event.key == "ArrowDown") {
+            if (currentCommandIndex < history.length - 1) currentCommandIndex++;
+            if (history.length !== 0 && currentCommandIndex < history.length) setInput(history[currentCommandIndex].input);
+        }
+    }
+
+    function inputUpdateAction(event) {
+        setInput(event.target.value)
+    }
+
+    function pageclickedAction() {
+        inputRef.current.focus();
+        scrollToView(inputRef);
+    }
+
+
+    function isValidGotoCommand() {
         let regex = /goto [a-zA-Z0-9]+/;
         return regex.test(input);
     }
 
     function isValidURL(input) {
-        let regex = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
-        return regex.test(input);
-    };
-
+        console.log(input);
+        return input.includes('http');
+    }
     // incomplete
-    function getProjectUrl() {
+    function getProjectUrl(keyword) {
         return 'project';
     }
 
+    function gotoAction() {
+        let parameter = input.split(' ')[1];
+        let url = isValidURL(parameter) ? parameter : getProjectUrl(parameter);
+        let content = `visiting ${url}`;
+        addHistoryEntry(false, content);
+        visitUrlInNewTab(url);
+    }
+
+    function addHistoryEntry(isError, content) {
+        let newEntry = { input: input, output: { isError, content } };
+        setHistory([...history, newEntry]);
+    }
+
+    function addError(isError) {
+        if (isError) addHistoryEntry(isError, "is not a valid command");
+    }
+
+    function whoamiAction() {
+        let content = `you are logged in as ${user.name}.`;;
+        addHistoryEntry(false, content);
+    }
+
+
+    function clearAction() {
+        setHistory([]);
+    }
+
+
+    let commands = [
+        {
+            keyword: '',
+            validation: isValidGotoCommand,
+            action: gotoAction,
+        },
+        {
+            keyword: 'clear',
+            validation: () => { return false },
+            action: clearAction,
+        },
+        {
+            keyword: 'whoami',
+            validation: () => { return false },
+            action: whoamiAction,
+        },
+    ]
+
+
 
     function executeCommands() {
-        let output = {};
-
-        if (isValidGotoCommand(input)) {
-            let parameter = input.split(' ')[1];
-            let url;
-            if (!isValidURL(parameter)) url = parameter;
-            else url = getProjectUrl()
-            visitUrlInNewTab(url);
-        }
-        else if (input == '') {
-            output = { isError: false, content: "" };
-        }
-        else if (input == 'clear') {
-            setHistory([]);
+        if (input === '') {
+            addHistoryEntry(false, "");
             return;
         }
-        else if (input == 'whoami') {
-            output = { isError: false, content: `you are logged in as ${user.name}.` };
+        let isError = true;
+        for (let command of commands) {
+            if (command.keyword === input || command.validation(input)) {
+                command.action();
+                isError = false;
+            }
         }
-        else {
-            output = { isError: true, content: "is not a valid command" };
-        }
-
-        let newEntry = { input: input, output: output };
-        setHistory([...history, newEntry]);
-
+        addError(isError);
     }
+
 
 
     return (
         <>
-            <Console onClick={() => { inputRef.current.focus() }}>
-                <Text style={{ whiteSpace: "pre-line", padding: "10px", borderRadius: "0", position: "sticky", top: "0", backgroundColor: "#504b45" }}>
-                    <AiFillHome color="#f37458" />
-                    <span style={{ color: "#87d441", }}> grey-terminal@1.0.0 : </span>
-                    enter
-                    <span style={{ color: "#87d441", }}> help </span>
-                    to know about the available commands
-                </Text>
+            <Console onClick={pageclickedAction}>
 
-                {history.map((current, index) => (
-                    <div key={index} style={{ paddingLeft: "10px" }}>
-                        <Text style={{ whiteSpace: "pre-line", wordBreak: "break-all" }}>
-                            <span style={{ color: "#87d441" }}> {user.name.concat(" ~$ ")} </span>
-                            {current.input}
-                        </Text>
-                        <Text style={{ whiteSpace: "pre-line", wordBreak: "break-all" }}>
-                            {
-                                current.output.isError &&
-                                <>
-                                    <span style={{ color: "red" }}> {`Error: `} </span>
-                                    <span style={{ color: "#87d441" }}> {`"${current.input}"`} </span>
-                                </>
-                            }
-                            {
-                                !current.output.isError &&
-                                <span style={{ color: "#87d441" }}> {"> "} </span>
-                            }
-                            {current.output.content}
-                        </Text>
-                    </div>
-                ))}
 
-                <Text style={{ whiteSpace: "pre-line", wordBreak: "break-all" }}>
-                    <span style={{ color: "#87d441", paddingLeft: "10px" }}> {user.name.concat("@grey-terminal ~$ ")} </span>
-                    {input}
-                </Text>
+                <div style={{ position: "sticky", top: "0", width: "100vw", backgroundColor: "#070707", padding: "10px" }}>
+
+                    <HeadingText>
+                        <FaDesktop style={{ width: "100%" }} />
+                        <span> grey-terminal@1.0.0 : </span> enter <span> help </span> to know about the available commands
+                    </HeadingText>
+                </div>
+
+
+                <div style={{ paddingLeft: "10px" }}>
+                    {history.map((current, index) => (
+                        <div key={index}>
+                            <Text style={{ whiteSpace: "pre-line", wordBreak: "break-all" }}>
+                                <Highlighted> {user.name.concat(" ~$ ")} </Highlighted> {current.input}
+                            </Text>
+                            <Text style={{ whiteSpace: "pre-line", wordBreak: "break-all" }}>
+                                {
+                                    current.output.isError &&
+                                    <>
+                                        <Error> {`Error: `} </Error>
+                                        <Highlighted> {`"${current.input}"`} </Highlighted> {current.output.content}
+                                    </>
+                                }
+                                {
+
+                                    !current.output.isError &&
+                                    <>
+                                        <FaTerminal color={"#87d441"} style={{ marginRight: "10px" }} />
+                                        {current.output.content}
+                                    </>
+                                }
+                            </Text>
+                        </div>
+                    ))}
+
+                    <Text style={{ whiteSpace: "pre-line", wordBreak: "break-all" }}>
+                        <Highlighted> {user.name.concat("@grey-terminal ~$ ")} </Highlighted>
+                        {input}
+                    </Text>
+
+                </div>
+
 
                 <Input spellCheck="false"
                     value={input}
                     ref={inputRef}
-                    onKeyDown={(event) => {
-                        if (event.key === "Enter") {
-                            event.preventDefault();
-                            executeCommands();
-                            setInput("");
-                            inputRef.current.scrollIntoView({ behavior: "smooth" });
-                        }
-                    }}
-                    onChange={(event) => {
-                        setInput(event.target.value)
-                    }}
+                    onKeyDown={keydownAction}
+                    onChange={inputUpdateAction}
                 />
 
             </Console>

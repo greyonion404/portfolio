@@ -1,16 +1,19 @@
 import styled from 'styled-components'
 import data from '../../data.js'
+import { Text } from '../Text_Component/Text'
 
 let Console = styled.div`
-    background: rgba(56, 4, 40, 0.9);
+    background: #090909;
     height: 100vh;
     width: 100vw;
     color: white;
-    padding-bottom: 5%;
+    padding-bottom: 20%;
     overflow-y: scroll;
     @media ${data.styles.devices.tablet} {
     }
 `
+
+
 let Input = styled.input`
 
     width: 100%;
@@ -26,6 +29,25 @@ let Input = styled.input`
     }
 `
 
+let HeadingText = styled(Text)`
+    white-space: pre-line;
+    padding: 10px;
+    margin: auto;
+    width: max-content;
+    max-width: "100%";
+
+    >span{
+        color: #87d441;
+    }
+
+`
+let Highlighted = styled.span`
+    color: #87d441;
+`
+let Error = styled.span`
+    color: #FF6347;
+`
 
 
-export { Console, Input }
+export { Console, Input, HeadingText, Highlighted, Error }
+
