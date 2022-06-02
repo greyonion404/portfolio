@@ -16,6 +16,16 @@ const data = {
             designation: "Programmer and Web-developer",
             aboutInfo: "Passionate React Developer with 3+ years of experience blending the design with programming skills to deliver an immersive and engaging user experience through efficient website development, proactive feature optimization, and relentless debugging.",
         },
+
+        projects: [
+            {
+                title: 'a project',
+                slug: 'a-project',
+                mainImage: 'https://picsum.photos/200',
+                shortDescription: "this is a demo short description about a demo project this is a demo short description about a demo project",
+                description: "this is a demo description about a demo project this is a demo description about a demo project this is a demo description about a demo project this is a demo description about a demo project this is a demo description about a demo project",
+            }
+        ],
         WorkAndEducation: {
             prompt: "Work and Education",
             studiedAt: [
@@ -70,6 +80,8 @@ const data = {
             ],
         }
     },
+
+
     styles: {
         devices: {
             mobileS: `(max-width: ${screenSize.mobileSmall})`,
