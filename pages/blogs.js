@@ -41,8 +41,7 @@ export default function Blogs({ blogs }) {
         pageLinkClassName={"PaginationLink"}
         activeClassName={"ActivePaginationLink"}
       />
-
-
+      
     </>
   )
 }
