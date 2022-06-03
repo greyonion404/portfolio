@@ -1,8 +1,8 @@
-import projects from './information/project_information';
-import devices from './information/media_query_information'
-import educationHistory from './information/education_information'
-import workHistory from './information/work_information';
-import color from './information/color_information';
+import projects from './data/project_information';
+import devices from './data/media_query_information'
+import educationHistory from './data/education_information'
+import workHistory from './data/work_information';
+import color from './data/color_information';
 
 
 const ProfileInformation = {
