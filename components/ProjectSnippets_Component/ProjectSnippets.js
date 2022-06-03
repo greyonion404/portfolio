@@ -13,7 +13,7 @@ export default function ProjectSnippets({ projects }) {
         <>
             {
                 projects.map((project, index) =>
-                    <ProjectSnippet key={project.id} >
+                    <ProjectSnippet key={project.slug} >
                         <Text style={{ textAlign: "left" }} active>
                         {<FaCode style={{ marginRight: "8px", fontSize: "90%" }} />}
                         {project.title}
