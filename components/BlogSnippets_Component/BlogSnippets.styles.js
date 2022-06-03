@@ -33,7 +33,6 @@ let BlogContainer = styled.div`
         grid-template-columns: 1fr;
         margin-top: .5vh;
         width: 100vw;
-        height: 74vh;
     }
 `
 
