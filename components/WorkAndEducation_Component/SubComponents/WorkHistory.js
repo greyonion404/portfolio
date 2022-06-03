@@ -21,11 +21,11 @@ export default function WorkHistory() {
     }
     return (
         <>
-            <PromptContainer>
+            <PromptContainer onClick={toggleWorkShown}>
                 <Text size={1} >
                     Work :
                 </Text>
-                <Text underlineOnHover active onClick={toggleWorkShown}>
+                <Text underlineOnHover active>
                     {
                         showWork ?
                             (<AiFillUpCircle color={data.styles.color.text.lighter} />) :

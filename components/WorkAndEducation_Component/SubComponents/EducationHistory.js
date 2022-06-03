@@ -18,11 +18,11 @@ export default function EducationHistory() {
     }
     return (
         <>
-            <PromptContainer>
+            <PromptContainer onClick={toggleEducationShown}>
                 <Text size={1} >
                     Education :
                 </Text>
-                <Text underlineOnHover active onClick={toggleEducationShown}>
+                <Text underlineOnHover active>
                     {
                         showEducation ?
                             (<AiFillUpCircle color={data.styles.color.text.lighter} />) :
