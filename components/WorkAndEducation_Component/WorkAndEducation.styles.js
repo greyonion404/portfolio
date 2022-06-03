@@ -26,6 +26,7 @@ let PromptContainer = styled.div`
     justify-content: space-between;
     border-bottom: 1px solid ${data.styles.color.text.lighter}20;
     padding: 20px;
+    cursor: pointer;
 `
 
 let opacity = 50;
