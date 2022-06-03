@@ -23,7 +23,7 @@ export default function WorkHistory() {
         <>
             <PromptContainer onClick={toggleWorkShown}>
                 <Text size={1} >
-                    Work :
+                    Work History:
                 </Text>
                 <Text underlineOnHover active>
                     {

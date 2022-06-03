@@ -20,7 +20,7 @@ export default function EducationHistory() {
         <>
             <PromptContainer onClick={toggleEducationShown}>
                 <Text size={1} >
-                    Education :
+                    Education History:
                 </Text>
                 <Text underlineOnHover active>
                     {
