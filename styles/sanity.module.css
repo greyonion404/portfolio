@@ -3,49 +3,63 @@
     width: 100%;
     margin: 0;
     padding: .5rem;
+
+    --dark: #000000;
+    --light: #FFFFFF;
+    --primary: #23272A;
+    --primaryMedium: #2C2F33;
+    --secondary: #5865F2;
+    --secondaryMedium: #404EED;
+    --textLight: #99AAB5;
+    --textLighter: #C0C0C0;
+    --textLightest: #FFFFFF;
+    --textInverted: #000000;
+    --fontSmall: 2.5vmin;
+    --fontMedium: 4.5vmin;
+    --fontLarge: 5.5vmin;
+    --fontXLarge: 6.5vmin;
+
+    --fontSmallMobile: 5vmin;
+    --fontMediumMobile: 6vmin;
+    --fontLargeMobile: 7.5vmin;
+    --fontXLargeMobile: 8.5vmin;
 }
 
 
-.sanity_container p, .sanity_container h3, .sanity_container a {
+.sanity_container p,
+.sanity_container h1,
+.sanity_container h2,
+.sanity_container h3,
+.sanity_container h4,
+.sanity_container a,
+.sanity_container ul,
+.sanity_container li,
+.sanity_container blockquote {
     line-height: 1.3;
-}
-
-.sanity_container p {
+    font-size: var(--fontSmall);
     color: var(--textLight);
-    font-size: 2.5vmin;
 }
 
-.sanity_container p strong {
-    color: var(--textLighter);
-    font-size: 2.6vmin;
+.sanity_container * strong {
+    color: var(--textLightest);
 }
 
-.sanity_container a {
-    color: var(--textLight);
-    text-decoration: none;
-    cursor: pointer;
+
+.sanity_container h1 {
+    font-size: var(--fontXLarge);
 }
 
-.sanity_container a:hover {
-    text-decoration: underline;
+.sanity_container h2 {
+    font-size: var(--fontLarge);
 }
-
 
 .sanity_container h3 {
-    color: var(--textLightest);
-    font-size: 4.5vmin;
-}
-
-.sanity_container h3 * {
-    color: var(--textLightest);
-    font-size: 4.5vmin;
+    font-size: var(--fontMedium);
 }
 
 .sanity_container ul {
-    margin-left: 5vmin;
-    color: var(--textLight);
     list-style-type: square;
-    font-size: 2.5vmin;
+    margin-left: 5vmin;
 }
 
 .sanity_container figure {
@@ -53,6 +67,7 @@
     display: flex;
     justify-content: center;
     padding: 20px;
+
 }
 
 .sanity_container figure img {
@@ -66,47 +81,31 @@
 @media (max-width: 768px) {
 
 
-
-    .sanity_container p, .sanity_container h3, .sanity_container a {
-        line-height: 1.3;
+    .sanity_container p,
+    .sanity_container h1,
+    .sanity_container h2,
+    .sanity_container h3,
+    .sanity_container h4,
+    .sanity_container a,
+    .sanity_container ul,
+    .sanity_container li,
+    .sanity_container blockquote {
+        font-size: var(--fontSmallMobile);
     }
 
-    .sanity_container p {
-        color: var(--textLight);
-        font-size: 5vmin;
+    .sanity_container h1 {
+        font-size: var(--fontXLargeMobile);
     }
 
-    .sanity_container p strong {
-        color: var(--textLighter);
-        font-size: 5.1vmin;
+    .sanity_container h2 {
+        font-size: var(--fontLargeMobile);
     }
-
-    .sanity_container a {
-        color: var(--textLight);
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    .sanity_container a:hover {
-        text-decoration: underline;
-    }
-
 
     .sanity_container h3 {
-        color: var(--textLightest);
-        font-size: 6vmin;
+        font-size: var(--fontMediumMobile);
     }
 
-    .sanity_container h3 * {
-        color: var(--textLightest);
-        font-size: 6vmin;
-    }
 
-    .sanity_container ul {
-        margin-left: 5vmin;
-        color: var(--textLight);
-        list-style-type: square;
-        font-size: 5vmin;
-    }
+
 
 }

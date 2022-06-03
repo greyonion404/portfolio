@@ -113,49 +113,6 @@ body {
     padding: 8px;
     margin-left: 10px;
   }
-
-  .sanity-container p, .sanity-container h3, .sanity-container a {
-    line-height: 1.3;
-  }
-
-  .sanity-container p {
-    color: var(--textLight);
-    font-size: 5vmin;
-  }
-
-  .sanity-container p strong {
-    color: var(--textLighter);
-    font-size: 5.1vmin;
-  }
-
-  .sanity-container a {
-    color: var(--textLight);
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .sanity-container a:hover {
-    text-decoration: underline;
-  }
-
-
-  .sanity-container h3 {
-    color: var(--textLightest);
-    font-size: 6vmin;
-  }
-
-  .sanity-container h3 * {
-    color: var(--textLightest);
-    font-size: 6vmin;
-  }
-
-  .sanity-container ul {
-    margin-left: 5vmin;
-    color: var(--textLight);
-    list-style-type: square;
-    font-size: 5vmin;
-  }
-
 }
 
 
@@ -175,9 +132,6 @@ body {
   .PaginationContainer li a {
     font-size: small;
     padding: 2px;
-    padding-top: 6px;
-    padding-bottom: 6px;
-    margin-left: 5px;
   }
 
 }
