@@ -28,12 +28,11 @@ export default function Project({ project }) {
                 </Text>
                 <img style={{ width: "90%", aspectRatio: "100/45", margin: "auto" }} src={mainImage} />
 
-                <Text size={2} style={
+                <Text style={
                     {
                         marginLeft: "auto",
                         marginRight: "auto",
-                        width: "100%",
-                        textAlign: "center"
+                        width: "90%",
                     }
                 }>
                     {description}
