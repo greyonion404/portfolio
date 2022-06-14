@@ -22,8 +22,10 @@ export default function Project({ project }) {
 
 
 const findProjectWithSlug = (projects, slug) => {
-    for(let i = 0; i < projects.length; i++)
-        if(projects[i].slug === slug) return projects[i];
+    if (projects) {
+        for (let i = 0; i < projects.length; i++)
+            if (projects[i].slug === slug) return projects[i];
+    }
 
     return null;
 }
@@ -36,7 +38,7 @@ export const getServerSideProps = async pageContext => {
     const slug = pageContext.query.slug;
     let project = findProjectWithSlug(projects, slug);
     let projects = data.info.projects;
-    
+
     if (!slug) return { notFound: true };
     if (project) return { props: { project: project } };
 
