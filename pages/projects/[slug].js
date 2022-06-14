@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar_Component/Navbar'
+import { ProjectContainer } from '../../components/ProjectSnippets_Component/ProjectSnippets.styles';
 import { Text } from '../../components/Text_Component/Text';
 import data from '../../data';
 
@@ -7,17 +8,39 @@ import data from '../../data';
 
 
 
-
 export default function Project({ project }) {
 
-    // const { title, slug, mainImage, description, shortDescription } = project;
+    const { title, slug, mainImage, description, shortDescription } = project;
 
     return (
         <>
             <Navbar />
-            {
-                project && <Text>{JSON.stringify(project)}</Text>
-            }
+            <ProjectContainer>
+                <Text size={2} style={
+                    {
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                        width: "100%",
+                        textAlign: "center"
+                    }
+                }>
+                    {title}
+                </Text>
+                <img style={{ width: "90%", aspectRatio: "100/45", margin: "auto" }} src={urlForImage(mainImage)} />
+
+                <Text size={2} style={
+                    {
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                        width: "100%",
+                        textAlign: "center"
+                    }
+                }>
+                    {description}
+                </Text>
+            </ProjectContainer>
+
+
         </>
     )
 }
@@ -33,7 +56,7 @@ const findProjectWithSlug = (projects, slug) => {
 }
 
 
-// gets the props for the current homepage
+// gets the props for the current page
 export const getServerSideProps = async pageContext => {
 
 
