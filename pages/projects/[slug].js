@@ -10,12 +10,14 @@ import data from '../../data';
 
 export default function Project({ project }) {
 
-    const { title, slug, mainImage, description, shortDescription } = project;
+    // const { title, slug, mainImage, description, shortDescription } = project;
 
     return (
         <>
             <Navbar />
-            <Text>{JSON.stringify(project)}</Text>
+            {
+                project && <Text>{JSON.stringify(project)}</Text>
+            }
         </>
     )
 }
@@ -35,12 +37,12 @@ const findProjectWithSlug = (projects, slug) => {
 export const getServerSideProps = async pageContext => {
 
 
-    const slug = pageContext.query.slug;
-    let project = findProjectWithSlug(projects, slug);
-    let projects = data.info.projects;
+    // const slug = pageContext.query.slug;
+    // let project = findProjectWithSlug(projects, slug);
+    // let projects = data.info.projects;
 
-    if (!slug) return { notFound: true };
-    if (project) return { props: { project: project } };
+    // if (!slug) return { notFound: true };
+    // if (project) return { props: { project: project } };
 
     return { notFound: true };
 
