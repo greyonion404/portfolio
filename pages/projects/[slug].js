@@ -37,12 +37,12 @@ const findProjectWithSlug = (projects, slug) => {
 export const getServerSideProps = async pageContext => {
 
 
-    // const slug = pageContext.query.slug;
-    // let project = findProjectWithSlug(projects, slug);
-    // let projects = data.info.projects;
+    const slug = pageContext.query.slug;
+    let projects = data.info.projects;
+    let project = findProjectWithSlug(projects, slug);
 
-    // if (!slug) return { notFound: true };
-    // if (project) return { props: { project: project } };
+    if (!slug) return { notFound: true };
+    if (project) return { props: { project: project } };
 
     return { notFound: true };
 
