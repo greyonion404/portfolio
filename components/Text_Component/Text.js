@@ -29,6 +29,7 @@ let Text = styled.p`
     border-radius: ${data.styles.borderRadius};
     line-height: 1.3;
     height: max-content;
+    white-space: pre-line;
     &:hover{
         text-decoration: ${({ underlineOnHover, underline }) => ((underlineOnHover || underline) ? "underline" : "none")};
     }
