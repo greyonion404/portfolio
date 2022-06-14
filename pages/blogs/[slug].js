@@ -13,7 +13,7 @@ import styles from '../../styles/sanity.module.css'
 
 
 export default function Blog({ blog }) {
-    { blog && console.log(blog) }
+
     const { title, mainImage, body } = blog;
 
     return (
