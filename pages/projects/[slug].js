@@ -5,6 +5,20 @@ import { Text } from '../../components/Text_Component/Text';
 import data from '../../data';
 
 
+function SpecifiedText({ size, content, textAlign, width, paddingLeft }) {
+
+    let style = {
+        paddingLeft: paddingLeft,
+        width: width,
+        textAlign: textAlign,
+    }
+    return (
+        <Text size={size} style={style}>
+            {content}
+        </ Text>
+    );
+
+}
 
 
 
@@ -16,27 +30,10 @@ export default function Project({ project }) {
         <>
             <Navbar />
             <ProjectContainer>
-                <Text size={2} style={
-                    {
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                        width: "100%",
-                        textAlign: "center"
-                    }
-                }>
-                    {title}
-                </Text>
-                <img style={{ width: "90%", aspectRatio: "100/45", margin: "auto", marginBottom: "10px"}} src={mainImage} />
-
-                <Text style={
-                    {
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                        width: "90%",
-                    }
-                }>
-                    {description}
-                </Text>
+                <SpecifiedText content={title} size={2} width={"100%"} textAlign="center" />
+                <img style={{ width: "90%", aspectRatio: "100/45", margin: "auto", marginBottom: "10px" }} src={mainImage} />
+                <SpecifiedText content={"Description : "} size={2} width={"90%"} textAlign="left" paddingLeft={"5%"} />
+                <SpecifiedText content={description} size={1} width={"90%"} textAlign="left" paddingLeft={"5%"} />
             </ProjectContainer>
 
 
