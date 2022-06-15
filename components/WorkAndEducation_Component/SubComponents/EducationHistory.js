@@ -6,6 +6,13 @@ import { AiFillDownCircle, AiFillUpCircle } from 'react-icons/ai';
 import { visitUrlInNewTab } from "../../../Utils/utility-functions";
 
 
+function ImageOfLink({ link }) {
+    if (link) return (
+        <div style={{ width: "max-content", paddingTop: "20px", paddingBottom: "20px" }}>
+            <img width={120} height={120} src={link} />
+        </div>
+    )
+}
 
 
 export default function EducationHistory() {
@@ -35,7 +42,8 @@ export default function EducationHistory() {
                     (
                         showEducation && educationInstitutions.map((current) =>
                             <ContainerChild key={current.id} onClick={() => { visitUrlInNewTab(current.websiteLink) }}>
-                                <Text active>
+                                <ImageOfLink link={current.imageLink} />
+                                <Text active underlineOnHover>
                                     {current.institutionName}
                                 </Text>
                                 <Text>

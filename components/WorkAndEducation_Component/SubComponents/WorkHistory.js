@@ -10,6 +10,16 @@ import { visitUrlInNewTab } from "../../../Utils/utility-functions";
 //     window.scrollTo({ top: 0, behavior: 'smooth' });
 // }
 
+
+function ImageOfLink({ link }) {
+    if (link) return (
+    <div style={{ width: "max-content", paddingTop: "20px", paddingBottom: "20px" }}>
+        <img width={120} height={120} src={link} />
+    </div>
+    )
+
+}
+
 export default function WorkHistory() {
 
     let hasWorkplaces = (data.info.WorkAndEducation.workedAt.length === 0);
@@ -40,7 +50,8 @@ export default function WorkHistory() {
                     (
                         showWork && workPlaces.map((current) =>
                             <ContainerChild key={current.id} onClick={() => { visitUrlInNewTab(current.websiteLink) }}>
-                                <Text active>
+                                <ImageOfLink link={current.imageLink}/>
+                                <Text active underlineOnHover>
                                     {current.role}{" @ "}{current.workplaceName}
                                 </Text>
                                 <Text >{current.startTime}{" - "}{current.endTime}</Text>
