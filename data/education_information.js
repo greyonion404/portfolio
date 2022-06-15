@@ -6,6 +6,7 @@ const educationHistory = [
         startTime: "20 Jan 2020",
         endTime: "present",
         websiteLink: null,
+        imageLink: "https://drive.google.com/uc?id=1Vcg_vjbJXtsQOBefBSj64ABCSFrZqy0B",
         description: "I am doing my BSc in computer science and engineering at North South University.",
     },
     {
@@ -15,6 +16,7 @@ const educationHistory = [
         startTime: "19 Jan 2017",
         endTime: "19 Jan 2019",
         websiteLink: null,
+        imageLink: "https://drive.google.com/uc?id=1Vcg_vjbJXtsQOBefBSj64ABCSFrZqy0B",
         description: "I have passed my HSC examination from Bangladesh Agriculture Univesity College, mymensingh.",
     },
     {
@@ -24,6 +26,7 @@ const educationHistory = [
         startTime: "19 Jan 2010",
         endTime: "19 Nov 2018",
         websiteLink: null,
+        imageLink: "https://drive.google.com/uc?id=1Vcg_vjbJXtsQOBefBSj64ABCSFrZqy0B",
         description: "I have passed my SSC examination from Mymensingh Zilla School",
     },
 ];
