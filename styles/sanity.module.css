@@ -1,7 +1,8 @@
 .sanity_container {
     display: block;
-    width: 100%;
+    width: 90%;
     margin: 0;
+    margin-left: 5%;
     padding: .5rem;
 
     --dark: #000000;
