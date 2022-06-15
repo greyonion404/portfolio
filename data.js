@@ -5,9 +5,11 @@ import workHistory from './data/work_information';
 import color from './data/color_information';
 
 
+//  https://drive.google.com/file/d/1Vcg_vjbJXtsQOBefBSj64ABCSFrZqy0B/view?usp=sharing
+
 const ProfileInformation = {
-    profilName: "Grey Onion",
-    profileImage: "https://picsum.photos/200",
+    profilName: "Maruf",
+    profileImage: "https://drive.google.com/uc?id=1Vcg_vjbJXtsQOBefBSj64ABCSFrZqy0B",
     designation: "Programmer and Web-developer",
     aboutInfo: "Passionate web/software Developer with 3+ years of experience blending the design with programming skills to deliver an immersive and engaging user experience through efficient development process, proactive feature optimization, and relentless debugging.",
 };
