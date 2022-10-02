@@ -8,6 +8,8 @@ import { Text } from '../../components/Text_Component/Text';
 import { formattedDate, urlForImage } from '../../Utils/utility-functions';
 import styles from '../../styles/sanity.module.css'
 
+import Script from 'next/script'
+
 
 
 
@@ -39,6 +41,21 @@ export default function Blog({ blog }) {
                         imageOptions={{ fit: 'max' }}
                     />}
             </BlogContainer>
+            {
+
+                <Script type="text/javascript">
+                    atOptions = {{
+                        'key': '9c6184792470c8d928873e342101f0e5',
+                        'format': 'iframe',
+                        'height': 60,
+                        'width': 468,
+                        'params': {}
+                    }}
+                    {
+                        document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.highperformancedisplayformat.com/9c6184792470c8d928873e342101f0e5/invoke.js"></scr' + 'ipt>')
+                    }
+                </Script>
+            }
         </>
     )
 }
