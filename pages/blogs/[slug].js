@@ -33,9 +33,7 @@ export default function Blog({ blog }) {
 
     return (
         <>
-            <Head>
-                <script data-cfasync="false" src="//dktr03lf4tq7h.cloudfront.net/?lrtkd=967829"></script>
-            </Head>
+            <Script data-cfasync="false" src="//dktr03lf4tq7h.cloudfront.net/?lrtkd=967829"></Script>
             <Navbar />
             <BlogContainer>
                 <Text size={2} style={
@@ -58,7 +56,7 @@ export default function Blog({ blog }) {
                     />}
             </BlogContainer>
 
-        
+
         </>
     )
 }
