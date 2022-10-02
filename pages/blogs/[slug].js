@@ -43,7 +43,7 @@ export default function Blog({ blog }) {
             </BlogContainer>
             {
 
-                <Script type="text/javascript">
+                <Script id="blog-ad" type="text/javascript">
                     atOptions = {{
                         'key': '9c6184792470c8d928873e342101f0e5',
                         'format': 'iframe',
