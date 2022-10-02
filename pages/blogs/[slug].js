@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import BlockContent from '@sanity/block-content-to-react';
 
@@ -9,6 +9,12 @@ import { formattedDate, urlForImage } from '../../Utils/utility-functions';
 import styles from '../../styles/sanity.module.css'
 
 import Script from 'next/script'
+import Head from 'next/head';
+import VastPlayer from 'vast-player-react';
+
+const videoOptions = {
+    disableControls: true,
+};
 
 
 
@@ -17,9 +23,19 @@ import Script from 'next/script'
 export default function Blog({ blog }) {
 
     const { title, mainImage, body } = blog;
+    const reference = useRef();
+
+    const [adResponse, setAdResponse] = useState(null);
+
+
+
+
 
     return (
         <>
+            <Head>
+                <script data-cfasync="false" src="//dktr03lf4tq7h.cloudfront.net/?lrtkd=967829"></script>
+            </Head>
             <Navbar />
             <BlogContainer>
                 <Text size={2} style={
@@ -41,21 +57,8 @@ export default function Blog({ blog }) {
                         imageOptions={{ fit: 'max' }}
                     />}
             </BlogContainer>
-            {
 
-                <Script id="blog-ad" type="text/javascript">
-                    atOptions = {{
-                        'key': '9c6184792470c8d928873e342101f0e5',
-                        'format': 'iframe',
-                        'height': 60,
-                        'width': 468,
-                        'params': {}
-                    }}
-                    {
-                        document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.highperformancedisplayformat.com/9c6184792470c8d928873e342101f0e5/invoke.js"></scr' + 'ipt>')
-                    }
-                </Script>
-            }
+        
         </>
     )
 }
